@@ -34,6 +34,25 @@ public class Main {
         //Here we change the sorting criterium using the class constants of Employee:
         //BYNAME = 0, BYSALARY = 1, BYTAXES = 2.
 
+        Employee.changeCriterion(Employee.BYNAME);
+        System.out.println("\n");
+        System.out.println("\tFirst name\t\t\tLast name\t\t Employee number");
+        System.out.println("\t-------------------------------------------------");
+        System.out.println(theCompany);
+
+
+        Employee.changeCriterion(Employee.BYSALARY);
+        System.out.println("\n");
+        System.out.println("\tFirst name\t\t\tLast name\t\t salary");
+        System.out.println("\t-------------------------------------------------");
+        System.out.println(theCompany);
+
+        Employee.changeCriterion(Employee.BYTAXES);
+        System.out.println("\n");
+        System.out.println("\tFirst name\t\t\tLast name\t\t taxes");
+        System.out.println("\t-------------------------------------------------");
+        System.out.println(theCompany);
+
         //This is the code for part B.
         // Employee.changeCriterion(Employee.BYTAXES);
         // System.out.println(theCompany);

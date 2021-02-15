@@ -80,8 +80,17 @@ public abstract class Employee extends Object implements Comparable<Employee> {
         first name (12 characters), second name (12 characters)
         and employee number (8 characters).
          */
+        if(sortCriterion == 0) {
+            //nice output but has no header
+            return String.format("%12s\t|\t%12s\t|\t%8d\n", firstName, surName, employeeNumber);
+        }
+        else if(sortCriterion == 1){
+            return String.format("%12s\t|\t%12s\t|\t%8f\n", firstName, surName, salary);
 
-        return String.format("%12s-%12s-%8d",firstName,surName,employeeNumber); //you know the drill
+        }
+        else{
+            return String.format("%12s\t|\t%12s\t|\t%8f\n", firstName, surName, computeTaxes());
+        }
     }
 
 
