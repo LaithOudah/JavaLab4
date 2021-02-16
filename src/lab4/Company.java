@@ -43,10 +43,21 @@ public class Company extends Object {
      */
     public String toString() {
         StringBuilder finished = new StringBuilder();
-        Collections.sort(allEmployees);
-        for(Employee str: allEmployees){
-            finished.append(str);
+        if(theEmployee.sortCriterion == 0){
+            Collections.sort(allEmployees);
+                for(Employee str: allEmployees) {
+                finished.append(str);
+                }
         }
+        else{
+            Collections.sort(allEmployees);
+            Collections.reverse(allEmployees);
+            for(Employee str: allEmployees) {
+                finished.append(str);
+            }
+        }
+
+
 
         return finished.toString(); //same as always, good lookin' :*
     }
