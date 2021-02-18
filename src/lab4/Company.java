@@ -45,9 +45,9 @@ public class Company extends Object {
         StringBuilder finished = new StringBuilder();
         if(theEmployee.sortCriterion == 0){
             Collections.sort(allEmployees);
-                for(Employee str: allEmployees) {
+            for(Employee str: allEmployees) {
                 finished.append(str);
-                }
+            }
         }
         else{
             Collections.sort(allEmployees);

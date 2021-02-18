@@ -20,7 +20,7 @@ public class Director extends Employee {
     }
 
     //This instance method adds a worker to the list
-    //list of subordinates (or bitches 'n hoes) of the director.
+    //list of subordinates (bitches) of the director.
     public void addEmployee(Worker arg) {
         subordinates.add(arg);
     }
