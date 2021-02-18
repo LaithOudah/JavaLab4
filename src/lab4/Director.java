@@ -1,7 +1,6 @@
 package lab4;
 
 import java.util.ArrayList;
-//Commenting ur mom
 
 public class Director extends Employee {
     ArrayList<Worker> subordinates;
@@ -26,22 +25,22 @@ public class Director extends Employee {
     }
 
 
-    //                  TODO: fix this shit.
+    //                  TODO: fix this shit. //FIXED.
     //----------------------------------------------------------------|
     //compares two directors (employees)                              |
     //arg == director the current director is being compared to.
     //By name
     public int compareTo(Employee arg) {
-        if(sortCriterion == 0){
+        if (sortCriterion == 0) {
             return firstName.compareToIgnoreCase(arg.firstName);
         }
         //by salary
-        else if(sortCriterion == 1) {
+        else if (sortCriterion == 1) {
             return Double.compare(salary, arg.salary);
         }
         //by taxes
         else {
-            return Double.compare(computeTaxes(),arg.computeTaxes());
+            return Double.compare(computeTaxes(), arg.computeTaxes());
         }
 
         //returns -1, 0, 1 depending on if the salary of
@@ -59,8 +58,8 @@ public class Director extends Employee {
         //add up total salary of all employees under the specific director
         //bonus = 10% of total salary of subordinates
         double sum = 0;
-        for (int i = 0; i < subordinates.size(); i++) {
-            sum += subordinates.get(i).salary;
+        for (Worker subordinate : subordinates) {
+            sum += subordinate.salary;
         }
         return 0.1 * sum;
     }

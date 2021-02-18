@@ -1,8 +1,5 @@
 package lab4;
 
-import java.util.ArrayList;
-import java.util.Collections;
-//yes.
 
 //public class Employee implements Comparable<Employee> ?????
 public abstract class Employee extends Object implements Comparable<Employee> {
@@ -10,20 +7,19 @@ public abstract class Employee extends Object implements Comparable<Employee> {
     public static final int BYNAME = 0;
     public static final int BYSALARY = 1;
     public static final int BYTAXES = 2;
-
+    protected static int sortCriterion = 0;
     //class variables - got by guessing based on methods
     protected String firstName;
     protected String surName;
     protected int employeeNumber;
     protected double salary;
-    protected static int sortCriterion = 0;
 
     /**
      * @param arg1 = first name of the employee.
      * @param arg2 = surname of the employee.
      * @param arg3 = employee number.
      * @param arg4 = salary
-     *             <p>
+     *             <jPanel>
      *             The constructor for an employee.
      */
     public Employee(String arg1, String arg2, int arg3, double arg4) {
@@ -37,16 +33,13 @@ public abstract class Employee extends Object implements Comparable<Employee> {
 
 
     static void changeCriterion(int arg) {
-        if(arg == 0){
+        if (arg == 0) {
             sortCriterion = 0;
-        }
-        else if(arg == 1){
+        } else if (arg == 1) {
             sortCriterion = 1;
-        }
-        else if(arg == 2){
+        } else if (arg == 2) {
             sortCriterion = 2;
-        }
-        else{
+        } else {
             System.out.println("Invalid input!");
         }
     }
@@ -80,15 +73,13 @@ public abstract class Employee extends Object implements Comparable<Employee> {
         first name (12 characters), second name (12 characters)
         and employee number (8 characters).
          */
-        if(sortCriterion == 0) {
-            //nice output but has no header
+        if (sortCriterion == 0) {
+            // With header
             return String.format("%12s\t|\t%12s\t|\t%8d\n", firstName, surName, employeeNumber);
-        }
-        else if(sortCriterion == 1){
+        } else if (sortCriterion == 1) {
             return String.format("%12s\t|\t%12s\t|\t%8f\n", firstName, surName, salary);
 
-        }
-        else{
+        } else {
             return String.format("%12s\t|\t%12s\t|\t%8f\n", firstName, surName, computeTaxes());
         }
     }

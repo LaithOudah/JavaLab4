@@ -2,9 +2,8 @@ package lab4;
 
 import java.util.ArrayList;
 import java.util.Collections;
-// Comment
 
-public class Company extends Object {
+public class Company {
     protected Employee theEmployee;
     //protected Director theDirector;
     ArrayList<Employee> allEmployees;
@@ -43,24 +42,21 @@ public class Company extends Object {
      */
     public String toString() {
         StringBuilder finished = new StringBuilder();
-        if(theEmployee.sortCriterion == 0){
+        if (Employee.sortCriterion == 0) {
             Collections.sort(allEmployees);
-            for(Employee str: allEmployees) {
+            for (Employee str : allEmployees) {
                 finished.append(str);
             }
-        }
-        else{
+        } else {
             Collections.sort(allEmployees);
             Collections.reverse(allEmployees);
-            for(Employee str: allEmployees) {
+            for (Employee str : allEmployees) {
                 finished.append(str);
             }
         }
-
 
 
         return finished.toString(); //same as always, good lookin' :*
     }
-
 
 }

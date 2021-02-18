@@ -1,7 +1,6 @@
 package lab4;
 
 public class Worker extends Employee {
-    // i hate mylyfe.
 
     /**
      * @param arg1 = worker's first name.
@@ -19,16 +18,16 @@ public class Worker extends Employee {
     //compares two workers (employees)
     //arg == worker the current worker is being compared to.
     public int compareTo(Employee arg) {
-        if(sortCriterion == 0){
+        if (sortCriterion == 0) {
             return firstName.compareToIgnoreCase(arg.firstName);
         }
         //by salary
-        else if(sortCriterion == 1) {
+        else if (sortCriterion == 1) {
             return Double.compare(salary, arg.salary);
         }
         //by taxes
         else {
-            return Double.compare(computeTaxes(),arg.computeTaxes());
+            return Double.compare(computeTaxes(), arg.computeTaxes());
         }
         //returns -1, 0, 1 depending on if the salary of
         // this worker is higher, equal or lower than that of arg.
